@@ -10,7 +10,7 @@ permissions:
   id-token: write
 
 jobs:
-  Setup:
+  Build:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -35,7 +35,7 @@ jobs:
         with:
           path: './build'
   deploy:
-    needs: build
+    needs: Build
     runs-on: ubuntu-latest
     environment:
       name: github-pages
