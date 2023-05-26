@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node_version: [16.x, 18.x]
+        node_version: [18.x]
     steps:
       - uses: actions/checkout@v3
       - name: Use Node.js ${{ matrix.node-version }}
@@ -34,7 +34,7 @@ jobs:
         uses: actions/upload-pages-artifact@v1
         with:
           path: './build'
-  deploy:
+  Deploy:
     needs: Build
     runs-on: ubuntu-latest
     environment:
