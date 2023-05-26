@@ -1,15 +1,17 @@
 name: React CodePipeline
 
 on:
- push:
-   branches: [ "dev" ]
+  push:
+    branches: ['dev']
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [18.x]
 
     steps:
       - uses: actions/checkout@v3
@@ -21,3 +23,15 @@ jobs:
       - run: npm ci
       - run: npm run build --if-present
       - run: npm test
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: './build'
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to gh-pages
+        uses: actions/deploy-pages@v2
+
