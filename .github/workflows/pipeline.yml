@@ -12,9 +12,6 @@ permissions:
 jobs:
   Build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node_version: [18.x]
     steps:
       - uses: actions/checkout@v3
       - name: Use Node.js ${{ matrix.node-version }}
