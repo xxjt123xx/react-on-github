@@ -4,11 +4,6 @@ on:
   push:
     branches: ['dev']
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
 jobs:
   Build-Deploy:
     uses: xxjt123xx/pipelines-templates/.github/workflows/react-on-github-pages.yml@main
