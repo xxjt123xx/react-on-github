@@ -7,3 +7,4 @@ on:
 jobs:
   Build-Deploy:
     uses: xxjt123xx/pipeline-templates/.github/workflows/react-on-github-pages.yml@main
+    
