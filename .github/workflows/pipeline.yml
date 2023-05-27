@@ -24,7 +24,9 @@ jobs:
       - name: Run Lint
         run: npm run lint
       - name: Run Test
-        run: npm run lint
+        run: npm run test
+      - name: Run Coverage
+        run: npm run coverage
       - name: Run Build
         run: npm run build --if-present
       - name: Setup Pages
